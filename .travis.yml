@@ -22,3 +22,15 @@ after_success:
   - docker push spg51/lab:fib-nginx
   - docker push spg51/lab:fib-server
   - docker push spg51/lab:fib-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-2'
+  app: 'multifib'
+  env: 'Multifib-env'
+  bucket_name: 'elasticbeanstalk-us-east-2-039699603980'
+  bucket_path: 'multifib'
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
