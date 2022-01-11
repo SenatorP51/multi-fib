@@ -26,10 +26,10 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   region: 'us-east-2'
-  app: 'multifib'
-  env: 'Multifib-env'
+  app: 'calcfib'
+  env: 'calcfib-env'
   bucket_name: 'elasticbeanstalk-us-east-2-039699603980'
-  bucket_path: 'multifib'
+  bucket_path: 'calcfib'
   on:
     branch: main
   access_key_id: $AWS_ACCESS_KEY
